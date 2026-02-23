@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Tablechairfloor.0001.ma
-//Last modified: Mon, Feb 02, 2026 03:41:54 PM
+//Last modified: Mon, Feb 02, 2026 03:44:58 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -12,12 +12,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26200)";
-fileInfo "UUID" "C6558415-4983-021C-7453-9B84B02455BC";
+fileInfo "UUID" "2BA7217A-4C9A-12F3-95C1-8E9344AAB9B1";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "6933C3F3-8F4A-A42A-C8BE-5185CD07BA4A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 99.618998593194021 45.762760638921826 -84.057690092683515 ;
+	setAttr ".t" -type "double3" 48.04674007534306 28.175281908869795 -40.538040112114118 ;
 	setAttr ".r" -type "double3" 165.39201088901586 49.840394334487172 -179.99999999999997 ;
 	setAttr ".rp" -type "double3" -7.6605388699135801e-15 -1.7763568394002505e-15 1.4210854715202004e-14 ;
 	setAttr ".rpt" -type "double3" 2.4426768981632706e-14 -1.2084782338866927e-14 1.3429604077735033e-14 ;
@@ -25,7 +25,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F8F72452-4041-7918-B6B6-08BF33157E13";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 134.73424647552761;
+	setAttr ".coi" 64.999196528292742;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
