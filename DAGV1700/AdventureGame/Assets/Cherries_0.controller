@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
 --- !u!1102 &-4514483058545980104
-=======
---- !u!1102 &-6157019707182854042
->>>>>>> 1b874f522399afcd5be133a4b9cbccb002a69c36
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -24,21 +20,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: ce617b76b2682e244b28b0335e386962, type: 2}
-=======
-  m_Motion: {fileID: 7400000, guid: 86e5559ad0795fb439b93743aa06d5fe, type: 2}
->>>>>>> 1b874f522399afcd5be133a4b9cbccb002a69c36
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-<<<<<<< HEAD
 --- !u!1107 &-2369949878584329195
-=======
---- !u!1107 &-4820002887702848379
->>>>>>> 1b874f522399afcd5be133a4b9cbccb002a69c36
 AnimatorStateMachine:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -48,11 +36,7 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-<<<<<<< HEAD
     m_State: {fileID: -4514483058545980104}
-=======
-    m_State: {fileID: -6157019707182854042}
->>>>>>> 1b874f522399afcd5be133a4b9cbccb002a69c36
     m_Position: {x: 200, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
@@ -63,11 +47,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-<<<<<<< HEAD
   m_DefaultState: {fileID: -4514483058545980104}
-=======
-  m_DefaultState: {fileID: -6157019707182854042}
->>>>>>> 1b874f522399afcd5be133a4b9cbccb002a69c36
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -80,11 +60,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-<<<<<<< HEAD
     m_StateMachine: {fileID: -2369949878584329195}
-=======
-    m_StateMachine: {fileID: -4820002887702848379}
->>>>>>> 1b874f522399afcd5be133a4b9cbccb002a69c36
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
