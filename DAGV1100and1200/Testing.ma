@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Testing.ma
-//Last modified: Mon, Apr 20, 2026 02:00:39 PM
+//Last modified: Mon, Apr 20, 2026 02:01:14 PM
 //Codeset: UTF-8
 requires maya "2026";
 requires "mtoa" "5.5.3";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Mac OS X 15.6.1";
-fileInfo "UUID" "51251585-6D48-454A-3374-01AFA95F504D";
+fileInfo "UUID" "CCB869B1-BD45-F81C-F2C4-39A6503FF1E3";
 createNode transform -s -n "persp";
 	rename -uid "2A09B9DE-794A-84B6-8130-4187095BE2E7";
 	setAttr ".v" no;
@@ -75,35 +75,6 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "pSphere1";
-	rename -uid "45787031-1347-524D-2762-D9832C20CE82";
-	setAttr ".t" -type "double3" -1.9100689061472591 5.8381699761090395 -8.0218453208227398 ;
-	setAttr ".r" -type "double3" 0 -83.451111243619664 0 ;
-	setAttr ".s" -type "double3" 3.5470618813473314 0.96202122067041484 3.1220715793452318 ;
-createNode mesh -n "pSphereShape1" -p "pSphere1";
-	rename -uid "895B032F-034D-193E-1EFB-1193C3CC55D2";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pCylinder1";
-	rename -uid "EF6E662E-1B48-2AC7-4A76-F0AFB9C03650";
-	setAttr ".t" -type "double3" 0 2.2846743044392941 0 ;
-	setAttr ".s" -type "double3" 1.6881912476962535 2.6275984077432453 1 ;
-createNode mesh -n "pCylinderShape1" -p "pCylinder1";
-	rename -uid "BF7B1554-9940-01AA-E62B-7F80D466727F";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "61E44718-AD4B-CC4A-CF16-C3A0A94DF316";
 	setAttr -s 2 ".lnk";
@@ -122,8 +93,6 @@ createNode renderLayerManager -n "renderLayerManager";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "F7C28EB8-AB4A-8F0B-3389-ADAF929696BC";
 	setAttr ".g" yes;
-createNode polySphere -n "polySphere1";
-	rename -uid "ADDEDC94-5248-6CA6-7FB8-AF81BC86700E";
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "434868B1-1441-A2CE-F786-0696966FF093";
 	setAttr ".b" -type "string" (
@@ -171,10 +140,6 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "2312C2CC-8544-E814-F15C-268BE7F48E4E";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
-createNode polyCylinder -n "polyCylinder1";
-	rename -uid "A09F562A-3844-34AF-451A-A195BE076671";
-	setAttr ".sc" 1;
-	setAttr ".cuv" 3;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -200,7 +165,6 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -222,8 +186,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "polySphere1.out" "pSphereShape1.i";
-connectAttr "polyCylinder1.out" "pCylinderShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -231,6 +193,4 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pSphereShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of Testing.ma
