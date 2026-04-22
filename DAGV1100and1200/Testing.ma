@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Testing.ma
-//Last modified: Tue, Apr 21, 2026 08:37:40 PM
+//Last modified: Wed, Apr 22, 2026 08:55:36 AM
 //Codeset: UTF-8
 requires maya "2026";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,24 +11,24 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Mac OS X 15.6.1";
-fileInfo "UUID" "28FD6024-B54D-CF98-0E20-8FA8A15E05E1";
+fileInfo "UUID" "60B6711A-CD4A-5ED2-C1D1-028058CDFDB9";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "2A09B9DE-794A-84B6-8130-4187095BE2E7";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 62.151698908849781 34.431994965221108 67.700285052562876 ;
-	setAttr ".r" -type "double3" -12.201622848992185 42.625654567901947 -1.5129156162046221e-14 ;
-	setAttr ".rp" -type "double3" 3.5527136788005009e-15 1.7763568394002505e-15 0 ;
-	setAttr ".rpt" -type "double3" -4.5429118890799016e-14 -6.8346106666659208e-14 -3.7545142438055873e-14 ;
+	setAttr ".t" -type "double3" 58.37151270020663 41.071690453580921 68.78800242876622 ;
+	setAttr ".r" -type "double3" -16.375671161958373 40.391760360878109 -4.5935733048267814e-14 ;
+	setAttr ".rp" -type "double3" 5.6621374255882984e-15 3.5527136788005009e-15 -1.4210854715202004e-14 ;
+	setAttr ".rpt" -type "double3" -6.55028397951157e-14 -6.1217117731233239e-14 -2.5218682812921052e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5F7E906B-6643-1C7C-3974-9691A220B514";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 94.071184312966878;
+	setAttr ".coi" 94.071184312966864;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.11471035224165149 14.549816793089335 0.046896468501017807 ;
+	setAttr ".tp" -type "double3" -0.11471035224155912 14.549816793089231 0.046896468501131494 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "63DCF5B5-1743-A78A-5896-A9AAA294E168";
@@ -18748,11 +18748,12 @@ createNode mesh -n "book8Shape" -p "|book2|book8";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book9";
+createNode transform -n "book9" -p "book2";
 	rename -uid "9158F716-F04B-3900-C367-72AC21A0844E";
-	setAttr ".t" -type "double3" -14.632348531874346 18.284070900308784 2.98614660858289 ;
-	setAttr ".r" -type "double3" 0 -176.46737216273405 0 ;
-	setAttr ".s" -type "double3" 1.8066199165136603 2.3062871362518229 0.69160910136947673 ;
+	setAttr ".t" -type "double3" 0.13336244704241196 2.3424313315273686 5.6430459753353759 ;
+	setAttr ".r" -type "double3" 0 189.16076776418922 0 ;
+	setAttr ".s" -type "double3" 1.0109945927494799 1 0.98912497373543939 ;
+	setAttr ".sh" -type "double3" 0 -0.13710645292749241 0 ;
 createNode mesh -n "book9Shape" -p "book9";
 	rename -uid "B01FA2B0-DA4A-A733-8432-6F851F5999BD";
 	setAttr -k off ".v";
@@ -18912,7 +18913,7 @@ createNode mesh -n "book9Shape" -p "book9";
 createNode transform -n "book3" -p "book9";
 	rename -uid "149E9C43-2D42-2FF4-9C2F-B7BD3457A81B";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 1.1578182591397741 ;
-createNode mesh -n "book3Shape" -p "|book9|book3";
+createNode mesh -n "book3Shape" -p "|book2|book9|book3";
 	rename -uid "EC6F33A8-6146-2C42-DCE2-1E8A7E33EC5D";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19065,7 +19066,7 @@ createNode mesh -n "book3Shape" -p "|book9|book3";
 createNode transform -n "book4" -p "book9";
 	rename -uid "2ECB54B4-B54C-3763-82C4-7FAC4B776C13";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 2.2897769108191501 ;
-createNode mesh -n "book4Shape" -p "|book9|book4";
+createNode mesh -n "book4Shape" -p "|book2|book9|book4";
 	rename -uid "5839193B-864C-E9B1-2411-3E8F3CBDD7A2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19218,7 +19219,7 @@ createNode mesh -n "book4Shape" -p "|book9|book4";
 createNode transform -n "book5" -p "book9";
 	rename -uid "CB87BE43-8F46-631B-0940-439A76C7BAD7";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 3.397222337517086 ;
-createNode mesh -n "book5Shape" -p "|book9|book5";
+createNode mesh -n "book5Shape" -p "|book2|book9|book5";
 	rename -uid "F6D39D0E-FA43-28E8-C01C-8BA50AB8F06E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19371,7 +19372,7 @@ createNode mesh -n "book5Shape" -p "|book9|book5";
 createNode transform -n "book6" -p "book9";
 	rename -uid "7A1FDA3F-D747-C9CD-CD24-03BA3637AE74";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 4.5521968009263913 ;
-createNode mesh -n "book6Shape" -p "|book9|book6";
+createNode mesh -n "book6Shape" -p "|book2|book9|book6";
 	rename -uid "0241DB4F-ED45-2D22-914C-CFBE0994D0D8";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19524,7 +19525,7 @@ createNode mesh -n "book6Shape" -p "|book9|book6";
 createNode transform -n "book7" -p "book9";
 	rename -uid "85ECFD8E-7C4A-09FE-B104-5FA911DE01BC";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 5.6276390704262429 ;
-createNode mesh -n "book7Shape" -p "|book9|book7";
+createNode mesh -n "book7Shape" -p "|book2|book9|book7";
 	rename -uid "CA7A5629-6E42-2283-3860-E7B093DB3FEC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19680,7 +19681,7 @@ createNode transform -n "book8" -p "book9";
 	setAttr ".r" -type "double3" -52.648168764116129 0 0 ;
 	setAttr ".s" -type "double3" 1 1.5340738601365436 0.65185909621782667 ;
 	setAttr ".sh" -type "double3" 0 0 -1.032937404771469 ;
-createNode mesh -n "book8Shape" -p "|book9|book8";
+createNode mesh -n "book8Shape" -p "|book2|book9|book8";
 	rename -uid "E39C76F2-1842-A77B-695C-F5BFADB98E80";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19844,7 +19845,7 @@ createNode transform -n "book10" -p "book9";
 	setAttr ".r" -type "double3" 0 177.27208977051507 0 ;
 	setAttr ".s" -type "double3" 1.0009679761897383 1 0.99903295988206986 ;
 	setAttr ".sh" -type "double3" 0 0.040650794960774284 0 ;
-createNode mesh -n "book10Shape" -p "|book9|book10";
+createNode mesh -n "book10Shape" -p "|book2|book9|book10";
 	rename -uid "72B432F3-494A-6C5D-D2A0-2FBACBCBBF34";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -19999,10 +20000,10 @@ createNode mesh -n "book10Shape" -p "|book9|book10";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book3" -p "|book9|book10";
+createNode transform -n "book3" -p "|book2|book9|book10";
 	rename -uid "832CF73F-7446-76AA-BAB7-40AB66376987";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 1.1578182591397741 ;
-createNode mesh -n "book3Shape" -p "|book9|book10|book3";
+createNode mesh -n "book3Shape" -p "|book2|book9|book10|book3";
 	rename -uid "39EC625A-E243-CB46-6C76-148DC8004A60";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20156,10 +20157,10 @@ createNode mesh -n "book3Shape" -p "|book9|book10|book3";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book4" -p "|book9|book10";
+createNode transform -n "book4" -p "|book2|book9|book10";
 	rename -uid "4422DCA0-E641-4C12-E44A-C785B156F30E";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 2.2897769108191501 ;
-createNode mesh -n "book4Shape" -p "|book9|book10|book4";
+createNode mesh -n "book4Shape" -p "|book2|book9|book10|book4";
 	rename -uid "515DEA0D-4B49-11C0-998F-8EA50346EAB4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20309,10 +20310,10 @@ createNode mesh -n "book4Shape" -p "|book9|book10|book4";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book5" -p "|book9|book10";
+createNode transform -n "book5" -p "|book2|book9|book10";
 	rename -uid "F8E88778-E14B-0AB2-DC21-F1930860CEEC";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 3.397222337517086 ;
-createNode mesh -n "book5Shape" -p "|book9|book10|book5";
+createNode mesh -n "book5Shape" -p "|book2|book9|book10|book5";
 	rename -uid "A5DF1E2C-584C-35FB-B616-DE8799A9394C";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20467,10 +20468,10 @@ createNode mesh -n "book5Shape" -p "|book9|book10|book5";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book6" -p "|book9|book10";
+createNode transform -n "book6" -p "|book2|book9|book10";
 	rename -uid "425FE94B-7E43-3C21-5C51-298386E289BF";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 4.5521968009263913 ;
-createNode mesh -n "book6Shape" -p "|book9|book10|book6";
+createNode mesh -n "book6Shape" -p "|book2|book9|book10|book6";
 	rename -uid "2B17EE59-B14D-B214-58E9-C789BF7563DF";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20620,10 +20621,10 @@ createNode mesh -n "book6Shape" -p "|book9|book10|book6";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book7" -p "|book9|book10";
+createNode transform -n "book7" -p "|book2|book9|book10";
 	rename -uid "960E683F-2948-B0A7-5DA4-36BC706D8455";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 5.6276390704262429 ;
-createNode mesh -n "book7Shape" -p "|book9|book10|book7";
+createNode mesh -n "book7Shape" -p "|book2|book9|book10|book7";
 	rename -uid "B566520A-6C47-A411-B170-E4B569157585";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -20778,11 +20779,12 @@ createNode mesh -n "book7Shape" -p "|book9|book10|book7";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book11";
+createNode transform -n "book11" -p "book2";
 	rename -uid "76B01AF5-594A-E8AB-981C-DBBAA1989431";
-	setAttr ".t" -type "double3" -15.088066641732938 7.5880023793582616 3.8034846632324268 ;
-	setAttr ".r" -type "double3" 0 0.3896873485973365 0 ;
-	setAttr ".s" -type "double3" 1.8066199165136603 2.3062871362518229 0.69160910136947673 ;
+	setAttr ".t" -type "double3" -0.11888657650318279 -2.2953556780874753 6.8248379052436157 ;
+	setAttr ".r" -type "double3" 0 1.017849124358553 0 ;
+	setAttr ".s" -type "double3" 1.000134682552843 1 0.99986533558410451 ;
+	setAttr ".sh" -type "double3" 0 -0.015162266152036341 0 ;
 createNode mesh -n "book11Shape" -p "book11";
 	rename -uid "F5B18DC4-F641-3312-1B10-B2993D715648";
 	setAttr -k off ".v";
@@ -20942,7 +20944,7 @@ createNode mesh -n "book11Shape" -p "book11";
 createNode transform -n "book3" -p "book11";
 	rename -uid "9E7411C6-A449-DF1E-4D9A-A8B7DB52A2AB";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 1.1578182591397741 ;
-createNode mesh -n "book3Shape" -p "|book11|book3";
+createNode mesh -n "book3Shape" -p "|book2|book11|book3";
 	rename -uid "8033DECB-A046-C407-2043-F89467321D1F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21095,7 +21097,7 @@ createNode mesh -n "book3Shape" -p "|book11|book3";
 createNode transform -n "book4" -p "book11";
 	rename -uid "305BDCCA-C147-B0A9-3DD2-1599FBDC3021";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 2.2897769108191501 ;
-createNode mesh -n "book4Shape" -p "|book11|book4";
+createNode mesh -n "book4Shape" -p "|book2|book11|book4";
 	rename -uid "5A3DE4BF-EB48-F3BE-1074-05AB8E0799BD";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21253,7 +21255,7 @@ createNode mesh -n "book4Shape" -p "|book11|book4";
 createNode transform -n "book5" -p "book11";
 	rename -uid "D4A2B78D-E041-B668-8F5B-369C3062B673";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 3.397222337517086 ;
-createNode mesh -n "book5Shape" -p "|book11|book5";
+createNode mesh -n "book5Shape" -p "|book2|book11|book5";
 	rename -uid "A8AE9C08-8B48-E111-9497-118DC0AB6E63";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21406,7 +21408,7 @@ createNode mesh -n "book5Shape" -p "|book11|book5";
 createNode transform -n "book6" -p "book11";
 	rename -uid "35C321A5-1144-4CDD-749A-0BB75829CD50";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 4.5521968009263913 ;
-createNode mesh -n "book6Shape" -p "|book11|book6";
+createNode mesh -n "book6Shape" -p "|book2|book11|book6";
 	rename -uid "7FDDE5BD-1E4B-D63C-4456-2B8B1C409133";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21564,7 +21566,7 @@ createNode mesh -n "book6Shape" -p "|book11|book6";
 createNode transform -n "book7" -p "book11";
 	rename -uid "EAD96192-2943-327B-F32E-AAAA1AAD2AC8";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 5.6276390704262429 ;
-createNode mesh -n "book7Shape" -p "|book11|book7";
+createNode mesh -n "book7Shape" -p "|book2|book11|book7";
 	rename -uid "0FD4B9CD-FD46-0C0B-35A3-A3B167B0CA4A";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21726,7 +21728,7 @@ createNode transform -n "book8" -p "book11";
 	setAttr ".r" -type "double3" -52.648168764116129 0 0 ;
 	setAttr ".s" -type "double3" 1 1.5340738601365436 0.65185909621782667 ;
 	setAttr ".sh" -type "double3" 0 0 -1.032937404771469 ;
-createNode mesh -n "book8Shape" -p "|book11|book8";
+createNode mesh -n "book8Shape" -p "|book2|book11|book8";
 	rename -uid "A8E78FE6-CA4F-A2DC-10A3-6D8FA808E5E4";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -21890,7 +21892,7 @@ createNode transform -n "book10" -p "book11";
 	setAttr ".r" -type "double3" 0 177.27208977051507 0 ;
 	setAttr ".s" -type "double3" 1.0009679761897383 1 0.99903295988206986 ;
 	setAttr ".sh" -type "double3" 0 0.040650794960774284 0 ;
-createNode mesh -n "book10Shape" -p "|book11|book10";
+createNode mesh -n "book10Shape" -p "|book2|book11|book10";
 	rename -uid "B8C09A55-2B40-0EA3-A954-D8834A73D046";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -22045,10 +22047,10 @@ createNode mesh -n "book10Shape" -p "|book11|book10";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book3" -p "|book11|book10";
+createNode transform -n "book3" -p "|book2|book11|book10";
 	rename -uid "FD03A382-624E-BA61-D30A-95BEDBEC5001";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 1.1578182591397741 ;
-createNode mesh -n "book3Shape" -p "|book11|book10|book3";
+createNode mesh -n "book3Shape" -p "|book2|book11|book10|book3";
 	rename -uid "BA02D5F9-4E40-A642-B1A4-458D3DEA3E43";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -22198,10 +22200,10 @@ createNode mesh -n "book3Shape" -p "|book11|book10|book3";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book4" -p "|book11|book10";
+createNode transform -n "book4" -p "|book2|book11|book10";
 	rename -uid "76E1B777-F84B-5150-8FE8-F8B98D210EC7";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 2.2897769108191501 ;
-createNode mesh -n "book4Shape" -p "|book11|book10|book4";
+createNode mesh -n "book4Shape" -p "|book2|book11|book10|book4";
 	rename -uid "63E90116-6645-ED9F-DA47-868A065A21D6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -22351,10 +22353,10 @@ createNode mesh -n "book4Shape" -p "|book11|book10|book4";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book5" -p "|book11|book10";
+createNode transform -n "book5" -p "|book2|book11|book10";
 	rename -uid "268D51E1-A44E-A444-6E78-4D93564C2960";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 3.397222337517086 ;
-createNode mesh -n "book5Shape" -p "|book11|book10|book5";
+createNode mesh -n "book5Shape" -p "|book2|book11|book10|book5";
 	rename -uid "EDC8F7ED-9A44-E5F6-3A0B-21A3CFD52ADF";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -22504,10 +22506,10 @@ createNode mesh -n "book5Shape" -p "|book11|book10|book5";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book6" -p "|book11|book10";
+createNode transform -n "book6" -p "|book2|book11|book10";
 	rename -uid "EE8C9933-7347-BB7C-617C-7ABB5C367EEB";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 4.5521968009263913 ;
-createNode mesh -n "book6Shape" -p "|book11|book10|book6";
+createNode mesh -n "book6Shape" -p "|book2|book11|book10|book6";
 	rename -uid "994ECFB2-0042-A200-92B1-4DB4C7B70307";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -22657,10 +22659,10 @@ createNode mesh -n "book6Shape" -p "|book11|book10|book6";
 		43 0 
 		45 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "book7" -p "|book11|book10";
+createNode transform -n "book7" -p "|book2|book11|book10";
 	rename -uid "C4F155E7-3C47-52E0-2AE9-9F8097A86680";
 	setAttr ".t" -type "double3" 0 -8.8817841970012523e-16 5.6276390704262429 ;
-createNode mesh -n "book7Shape" -p "|book11|book10|book7";
+createNode mesh -n "book7Shape" -p "|book2|book11|book10|book7";
 	rename -uid "946C8FC8-E648-DD96-BC86-19A3B36387A2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -25465,7 +25467,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 697\n            -height 412\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
 		+ "        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 711\n            -height 549\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1119\n            -height 728\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -25488,8 +25490,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 711\\n    -height 549\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 711\\n    -height 549\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 728\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 728\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -25699,36 +25701,43 @@ connectAttr "|book2|book6|book6Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "|book2|book7|book7Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "|book2|book8|book8Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "book9Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book3|book3Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book4|book4Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book5|book5Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book6|book6Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book7|book7Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book8|book8Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book10|book10Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book10|book3|book3Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book10|book4|book4Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book10|book5|book5Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book10|book6|book6Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book9|book10|book7|book7Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book9|book3|book3Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book9|book4|book4Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book9|book5|book5Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book9|book6|book6Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book9|book7|book7Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book9|book8|book8Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book9|book10|book10Shape.iog" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "|book2|book9|book10|book3|book3Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book9|book10|book4|book4Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book9|book10|book5|book5Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book9|book10|book6|book6Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book9|book10|book7|book7Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
 connectAttr "book11Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book3|book3Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book4|book4Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book5|book5Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book6|book6Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book7|book7Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book8|book8Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book10|book10Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|book11|book10|book3|book3Shape.iog" ":initialShadingGroup.dsm" -na
+connectAttr "|book2|book11|book3|book3Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book11|book4|book4Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book11|book5|book5Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book11|book6|book6Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book11|book7|book7Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book11|book8|book8Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|book2|book11|book10|book10Shape.iog" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "|book11|book10|book4|book4Shape.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|book11|book10|book5|book5Shape.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|book11|book10|book6|book6Shape.iog" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "|book11|book10|book7|book7Shape.iog" ":initialShadingGroup.dsm" -na
-		;
+connectAttr "|book2|book11|book10|book3|book3Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book11|book10|book4|book4Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book11|book10|book5|book5Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book11|book10|book6|book6Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|book2|book11|book10|book7|book7Shape.iog" ":initialShadingGroup.dsm"
+		 -na;
 connectAttr "pasted__revolvedSurfaceShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "file2.msg" ":initialMaterialInfo.t" -na;
